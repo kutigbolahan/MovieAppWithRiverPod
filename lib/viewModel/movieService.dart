@@ -1,6 +1,13 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movieWithRiverpod/model/movieModel.dart';
 import 'package:movieWithRiverpod/viewModel/environmentConfig.dart';
+
+final movieServiceProvider = Provider<MovieService>((ref) {
+  final config = ref.read(environmentConfigProvider);
+
+  return MovieService(config, Dio());
+});
 
 class MovieService {
   final EnvironmentConfig _environmentConfig;
