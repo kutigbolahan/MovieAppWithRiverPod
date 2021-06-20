@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "movieWithRiverpod",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+               "--dart-define=movieApiKey=b5f9b02d0f5d57d2f87ea214b56f63af"
+            ]
+        },
+        {
+            "name": "movieWithRiverpod (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
