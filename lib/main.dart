@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movieWithRiverpod/homepage.dart';
+
+import 'package:movieWithRiverpod/view/homepage.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
