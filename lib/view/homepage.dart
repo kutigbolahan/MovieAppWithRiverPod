@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movieWithRiverpod/model/movieModel.dart';
+import 'package:movieWithRiverpod/viewModel/exceptions.dart';
 import 'package:movieWithRiverpod/viewModel/movieService.dart';
 
 final moviesFutureProvider =
@@ -24,7 +25,10 @@ class MyHomePage extends ConsumerWidget {
       ),
       body: watch(moviesFutureProvider).when(
           error: (e, s) {
-            return _ErrorBody(message: 'OPPS');
+            if (e is MoviesException) {
+              return _ErrorBody(message: e.message);
+            }
+            return _ErrorBody(message: 'OPPS!! Something went wrong');
           },
           loading: () => Center(
                 child: CircularProgressIndicator(),
